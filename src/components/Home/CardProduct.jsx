@@ -1,14 +1,30 @@
+/* eslint-disable react/prop-types */
+import { useNavigate } from 'react-router-dom';
 import '../../styles/CardProduct.css';
 
 const CardProduct = ({ prod }) => {
+  const navigate = useNavigate();
+
+  const handDetail = () => {
+    navigate(`/product/${prod.id}`);
+  };
+
+  const handleAddCart = e => {
+    e.stopPropagation();
+  };
+
   return (
-    <article className='product'>
+    <article onClick={handDetail} className='product'>
       <header className='product__header'>
         <div className='product__img-container'>
           <img className='product__img' src={prod.images[0].url} alt='images' />
         </div>
         <div className='product__img-container'>
-          <img className='product__img' src={prod.images[1].url} alt='images1' />
+          <img
+            className='product__img'
+            src={prod.images[1].url}
+            alt='images1'
+          />
         </div>
       </header>
 
@@ -21,7 +37,7 @@ const CardProduct = ({ prod }) => {
           <span className='product__price-label'>Price</span>
           <h2 className='product__price-value'>{prod.price}</h2>
         </article>
-        <button className='product__btn'>
+        <button className='product__btn' onClick={handleAddCart}>
           <i className='bx bx-cart-alt bx-flashing'></i>
         </button>
       </section>

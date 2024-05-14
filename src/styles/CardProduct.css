@@ -3,6 +3,12 @@
   max-width: 320px;
   border: 1px solid #ccc8;
   border-radius: 0.6em;
+  cursor: pointer;
+  transition: transform 200ms ease;
+}
+
+.product:hover {
+  transform: scale(1.05);
 }
 
 .product__header {
