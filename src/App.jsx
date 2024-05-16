@@ -2,11 +2,14 @@ import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { getAllProductsThunk } from './slices/products.slice';
 import { useEffect } from 'react';
+import Header from './components/shared/Header';
 import './App.css';
 
 // Routes Pages
 import Home from './pages/Home';
 import ProductId from './pages/ProductIdPage';
+import RegisterPage from './pages/RegisterPage'
+import LoginPage from './pages/LoginPage'
 
 function App() {
   const dispatch = useDispatch();
@@ -19,9 +22,12 @@ function App() {
 
   return (
     <div className='app'>
+      <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/product/:id' element={<ProductId />} />
+        <Route path='/register' element={<RegisterPage />} />
+        <Route path='/login' element={<LoginPage />} />
       </Routes>
     </div>
   );
