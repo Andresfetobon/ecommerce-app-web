@@ -1,7 +1,7 @@
 const getConfigAuth = () => {
     return {
         Headers: {
-            Authorization: `Bearer ${'token'}`
+            Authorization: `Bearer ${localStorage.getItem('token')}`
         }
     }
 };
