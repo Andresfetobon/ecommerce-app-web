@@ -6,6 +6,7 @@ const useFetch = baseUrl => {
   const [hassError, setHassError] = useState(false);
   const [isloading, setIsLoading] = useState(false);
 
+  //GET
   const getApi = path => {
     const url = `${baseUrl}${path}`;
     setIsLoading(true);
@@ -24,7 +25,15 @@ const useFetch = baseUrl => {
       });
   };
 
-  return [infoApi, getApi, hassError, isloading];
+  //POST
+  const postApi = (path, data) => {
+    const url = `${baseUrl}${path}`;
+    axios.post(url, data)
+    .then(res => console.log(res.data))
+    .catch(err => console.log(err))
+  }
+
+  return [infoApi, getApi, hassError, isloading, postApi];
 };
 
 export default useFetch;

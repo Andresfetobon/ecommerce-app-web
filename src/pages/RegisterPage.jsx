@@ -1,18 +1,23 @@
-import { useForm } from "react-hook-form";
+import { useForm } from 'react-hook-form';
+import useAuth from '../Hooks/useAuth';
 
 const RegisterPage = () => {
+  const { register, handleSubmit, reset } = useForm();
 
-  const {register, handleSubmit, reset} = useForm()
-  const submit = (data) => {
+  const { createUser } = useAuth();
+  
+  const submit = data => {
+    const url = 'https://e-commerce-api-v2.academlo.tech/api/v1/users';
+    createUser(url, data);
     reset({
       firstName: '',
       lastName: '',
       email: '',
       password: '',
-      phone: ''
-    })
-    console.log(data)
-  }
+      phone: '',
+    });
+    console.log(data);
+  };
 
   return (
     <div>

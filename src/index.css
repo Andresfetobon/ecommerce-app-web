@@ -35,7 +35,7 @@ img {
 }
 input,
 button {
-  border: none;
+  outline: none;
   font-family: inherit;
 }
 button {
