@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { createLogger } from 'vite';
+import getConfigAuth from '../utils/getConfigAuth';
 
 const cartSlice = createSlice({
   name: 'cart',
@@ -24,7 +24,7 @@ export default cartSlice.reducer;
 
 const baseUrl = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
 
-export const getCartThunk = () => (dispatch) => {
+export const getCartThunk = () => dispatch => {
   const url = baseUrl;
   axios
     .get(url)
@@ -32,11 +32,16 @@ export const getCartThunk = () => (dispatch) => {
     .catch(error => console.log(error));
 };
 
-export const postCartThunk = (data) => (dispatch) => {
+export const postCartThunk = prod => dispatch => {
   const url = baseUrl;
+
+  const data = {
+    quantity: 1,
+    productId: prod.id
+  };
+
   axios
-    .post(url, data)
+    .post(url, data, getConfigAuth())
     .then(res => dispatch(addProductCartG(res.data)))
     .catch(error => console.log(error));
 };
-   

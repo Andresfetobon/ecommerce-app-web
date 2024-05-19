@@ -1,9 +1,12 @@
 /* eslint-disable react/prop-types */
 import { useNavigate } from 'react-router-dom';
 import '../../styles/CardProduct.css';
+import { useDispatch } from 'react-redux';
+import { postCartThunk } from '../../slices/cart.slice';
 
 const CardProduct = ({ prod }) => {
   const navigate = useNavigate();
+  const dispatch = useDispatch()
 
   const handDetail = () => {
     navigate(`/product/${prod.id}`);
@@ -11,6 +14,7 @@ const CardProduct = ({ prod }) => {
 
   const handleAddCart = e => {
     e.stopPropagation();
+    dispatch(postCartThunk(prod))
   };
 
   return (
