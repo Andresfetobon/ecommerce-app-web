@@ -10,6 +10,8 @@ import Home from './pages/Home';
 import ProductId from './pages/ProductIdPage';
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
+import CartPage from './pages/CartPage';
+import { getCartThunk } from './slices/cart.slice';
 
 function App() {
   const dispatch = useDispatch();
@@ -17,6 +19,7 @@ function App() {
   // Get all Products when the app is loaded
   useEffect(() => {
     dispatch(getAllProductsThunk());
+    dispatch(getCartThunk())
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -28,6 +31,7 @@ function App() {
         <Route path='/product/:id' element={<ProductId />} />
         <Route path='/register' element={<RegisterPage />} />
         <Route path='/login' element={<LoginPage />} />
+        <Route path='/cart' element={<CartPage />} />
       </Routes>
     </div>
   );

@@ -12,7 +12,6 @@ const SimilarProducts = ({ product }) => {
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [product]);
-  console.log(productByCategory);
   return (
     <div>
       <h2>Similar Products</h2>

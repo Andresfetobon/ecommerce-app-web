@@ -27,7 +27,7 @@ const baseUrl = 'https://e-commerce-api-v2.academlo.tech/api/v1/cart';
 export const getCartThunk = () => dispatch => {
   const url = baseUrl;
   axios
-    .get(url)
+    .get(url, getConfigAuth())
     .then(res => dispatch(setCartG(res.data)))
     .catch(error => console.log(error));
 };
@@ -42,6 +42,8 @@ export const postCartThunk = prod => dispatch => {
 
   axios
     .post(url, data, getConfigAuth())
-    .then(res => dispatch(addProductCartG(res.data)))
+    .then(res => {
+        console.log(res.data)
+        dispatch(addProductCartG(res.data))})
     .catch(error => console.log(error));
 };

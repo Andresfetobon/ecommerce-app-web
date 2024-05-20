@@ -15,7 +15,10 @@ const CardProduct = ({ prod }) => {
   const handleAddCart = e => {
     e.stopPropagation();
     dispatch(postCartThunk(prod))
+    navigate('/cart')
   };
+
+  
 
   return (
     <article onClick={handDetail} className='product'>

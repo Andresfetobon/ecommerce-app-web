@@ -16,7 +16,6 @@ const RegisterPage = () => {
       password: '',
       phone: '',
     });
-    console.log(data);
   };
 
   return (
