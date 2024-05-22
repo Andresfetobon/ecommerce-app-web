@@ -3,6 +3,7 @@ import useFetch from '../Hooks/useFetch';
 import { useEffect } from 'react';
 import ProductInfo from '../components/ProductId/ProductInfo';
 import SimilarProducts from '../components/ProductId/SimilarProducts';
+import SliderImgs from '../components/ProductId/SliderImgs';
 
 const ProductIdPage = () => {
   const { id } = useParams();
@@ -15,10 +16,10 @@ const ProductIdPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-  console.log(product);
 
   return (
     <div>
+      <SliderImgs product={product}/>
       <ProductInfo product={product} />
       <SimilarProducts product={product}/>
     </div>
