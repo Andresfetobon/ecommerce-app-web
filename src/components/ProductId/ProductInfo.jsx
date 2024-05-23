@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import { useState } from 'react';
+import './Styles/ProductInf.css'
 
 const ProductInfo = ({ product }) => {
   const [quantity, setQuantity] = useState(1);

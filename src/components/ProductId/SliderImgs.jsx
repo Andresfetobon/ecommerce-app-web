@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 
 import { useEffect, useRef, useState } from 'react';
-import '../../styles/SliderImages.css'
+import './Styles/SliderImages.css'
 
 const SliderImgs = ({ product }) => {
   const [currenIndex, setCurrenIndex] = useState(0);
@@ -29,11 +29,11 @@ const SliderImgs = ({ product }) => {
       <div className="slider-wrapper" ref={slideRef}>
         {product?.images.map((image, index) => (
           <div className="slide" key={index}>
-            <img src={image.url} alt={`Slide ${index}`} />
+            <img className='slider__img' src={image.url} alt={`Slide ${index}`} />
           </div>
         ))}
       </div>
-      <button onClick={prevSlide} className="prev-button">Prev</button>
+        <button onClick={prevSlide} className="prev-button">Prev</button>
       <button onClick={nextSlide} className="next-button">Next</button>
     </div>
   );
