@@ -1,12 +1,13 @@
 .slider-container {
   width: 100%;
-  max-width: 800px;
+  max-width: 500px;
   margin: 0 auto;
   position: relative;
   overflow: hidden;
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: #fff; /* Fondo blanco para mejorar la visualización */
+  padding: .5em;
 }
 
 .slider-wrapper {

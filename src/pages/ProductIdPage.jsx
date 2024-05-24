@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import ProductInfo from '../components/ProductId/ProductInfo';
 import SimilarProducts from '../components/ProductId/SimilarProducts';
 import SliderImgs from '../components/ProductId/SliderImgs';
+import '../styles/ProductIdPage.css'
 
 const ProductIdPage = () => {
   const { id } = useParams();
@@ -16,12 +17,17 @@ const ProductIdPage = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [id]);
 
-
   return (
     <div>
-      <SliderImgs product={product}/>
-      <ProductInfo product={product} />
-      <SimilarProducts product={product}/>
+      <div className='container'>
+        <div className='slider'>
+          <SliderImgs product={product} />
+        </div>
+        <div className='product-info-container'>
+          <ProductInfo product={product} />
+        </div>
+      </div>
+      <SimilarProducts product={product} />
     </div>
   );
 };

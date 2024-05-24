@@ -6,7 +6,6 @@ const Home = () => {
 
   return (
     <div>
-      <h1>Home</h1>
       <div className='container-product-card'>
         {products?.map(prod => (
           <CardPorduct key={prod.id} prod={prod} />

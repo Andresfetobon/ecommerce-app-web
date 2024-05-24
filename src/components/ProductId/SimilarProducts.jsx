@@ -14,13 +14,13 @@ const SimilarProducts = ({ product }) => {
   }, [product]);
   return (
     <div>
-      <h2>Similar Products</h2>
+      <h2 style={{ textAlign: 'center', marginTop: '2rem', fontSize: "40px" }}>
+        Similar Products
+      </h2>
       <div className='container-product-card'>
         {productByCategory?.map(prod => {
           if (product.id !== prod.id) {
-            return (
-              <CardProduct prod={prod} key={prod.id} />
-            ) 
+            return <CardProduct prod={prod} key={prod.id} />;
           }
         })}
       </div>

@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import useAuth from '../Hooks/useAuth';
+import '../styles/RegisterPage.css'
 
 const RegisterPage = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -19,8 +20,8 @@ const RegisterPage = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit(submit)}>
+    <div className='register-page'> 
+      <form className='register-form' onSubmit={handleSubmit(submit)}>
         <div>
           <label htmlFor='firstName'>First name</label>
           <input {...register('firstName')} type='text' id='firstName' />

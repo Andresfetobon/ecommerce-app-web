@@ -1,5 +1,6 @@
 import { useForm } from 'react-hook-form';
 import useAuth from '../Hooks/useAuth';
+import '../styles/LoginPage.css'
 
 const LoginPage = () => {
 
@@ -16,8 +17,8 @@ const LoginPage = () => {
     });
   };
   return (
-    <div onSubmit={handleSubmit(submit)}>
-      <form>
+    <div  className='login-page' onSubmit={handleSubmit(submit)}>
+      <form className='login-form'>
         <div>
           <label htmlFor='email'>Email</label>
           <input {...register('email')} type='email' id='email' />
