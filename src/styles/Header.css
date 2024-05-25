@@ -49,8 +49,18 @@ nav ul li a:hover {
     align-items: flex-start;
   }
 
-  nav ul {
+  .nav-links {
     flex-direction: column;
-    gap: 10px;
+    width: 100%;
+    text-align: center;
+    padding: 20px 0;
+  }
+
+  .nav-links li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 16px;
   }
 }

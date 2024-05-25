@@ -94,3 +94,44 @@
 .product__btn:hover {
   filter: brightness(1.2);
 }
+
+/* Estilos responsivos */
+@media (max-width: 768px) {
+  .product {
+    max-width: 100%;
+    margin: 0 auto;
+  }
+
+  .product__body {
+    grid-template-columns: 1fr;
+    row-gap: 0.5em;
+  }
+
+  .product__titles {
+    grid-column: 1;
+  }
+
+  .product__btn {
+    justify-self: center;
+    align-self: center;
+    position: static;
+  }
+}
+
+@media (max-width: 480px) {
+  .product__body {
+    padding: 1em 0.5em 1.5em;
+  }
+
+  .product__brand,
+  .product__name,
+  .product__price-label,
+  .product__price-value {
+    font-size: 0.8rem;
+  }
+
+  .product__btn {
+    width: 2em;
+    font-size: 1.2em;
+  }
+}

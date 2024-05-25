@@ -48,3 +48,29 @@
     background-color: darkred;
   }
   
+
+  @media (max-width: 768px) {
+    .register-form {
+      padding: 20px;
+      max-width: 90%;
+    }
+  
+    .register-form button {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .register-form {
+      padding: 15px;
+    }
+  
+    .register-form button {
+      padding: 8px;
+      font-size: 14px;
+    }
+  
+    .register-form input {
+      padding: 6px;
+    }
+  }

@@ -21,9 +21,30 @@
 
 /* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
-  .slider-container,
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .slider, 
   .product-info-container {
     max-width: 100%;
     min-width: 100%;
+  }
+
+  .product-info-container {
+    margin-top: 20px; /* Añadir espacio entre elementos en columnas */
+  }
+}
+
+/* Estilos responsivos para pantallas medianas */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .container {
+    gap: 10px; /* Reducir el espacio entre los componentes */
+  }
+
+  .slider, 
+  .product-info-container {
+    max-width: 48%; /* Ajustar el tamaño para que quepan dos elementos en una fila */
   }
 }
