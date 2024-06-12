@@ -4,7 +4,7 @@ import getConfigAuth from '../utils/getConfigAuth';
 
 const cartSlice = createSlice({
   name: 'cart',
-  initialState: null,
+  initialState: [],
   reducers: {
     setCartG: (state, action) => action.payload,
     // agregando prudctos median te logica
@@ -17,8 +17,7 @@ const cartSlice = createSlice({
   },
 });
 
-export const { setCartG, addProductCartG, deleteProductCartG } =
-  cartSlice.actions;
+export const { setCartG, addProductCartG, deleteProductCartG } = cartSlice.actions;
 
 export default cartSlice.reducer;
 

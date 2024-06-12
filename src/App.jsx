@@ -1,6 +1,5 @@
 import { Route, Routes } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
-import { getAllProductsThunk } from './slices/products.slice';
 import { useEffect } from 'react';
 import Header from './components/shared/Header';
 import './App.css';
@@ -11,7 +10,10 @@ import ProductId from './pages/ProductIdPage';
 import RegisterPage from './pages/RegisterPage'
 import LoginPage from './pages/LoginPage'
 import CartPage from './pages/CartPage';
+
+// Thunk
 import { getCartThunk } from './slices/cart.slice';
+import { getAllProductsThunk } from './slices/products.slice';
 
 function App() {
   const dispatch = useDispatch();
